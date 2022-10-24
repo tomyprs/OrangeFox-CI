@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Device
-export FOX_BRANCH="fox_11.0"
+export FOX_BRANCH="fox_12.1"
 export DT_LINK="https://github.com/tomyprs/recovery_device_redmi_rosemary -b android-12.1"
 
 export DEVICE="rosemary"
