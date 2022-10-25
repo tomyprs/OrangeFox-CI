@@ -2,8 +2,7 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://github.com/tomyprs/recovery_device_redmi_rosemary -b android-12.1"
-
+export DT_LINK="ENCRYPTED[c838ace49931d1ff08211edc368cb87927188c47eb805bd8a3a856a4f3874eede429fbdf3f8dabc24a2650188170a119]"
 export DEVICE="rosemary"
 export OEM="redmi"
 
@@ -20,9 +19,6 @@ export OUTPUT="OrangeFox*.zip"
 DEPS=(
     "https://github.com/OrangeFoxRecovery/Avatar.git misc"
 )
-
-# Extra Command
-export EXTRA_CMD="export OF_MAINTAINER=Kaiverse"
 
 # Magisk
 ## Use the Latest Release of Magisk for the OrangeFox addon
