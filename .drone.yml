@@ -22,7 +22,7 @@ steps:
         from_secret: OEM
 
     commands:
-      - "export FOX_BRANCH="fox_12.1"
+      - "export FOX_BRANCH=fox_12.1"
       - "export DT_LINK=$DT_LINK"
       - "export TG_CHAT_ID=$TG_CHAT_ID"
       - "export TG_TOKEN=$TG_TOKEN"
