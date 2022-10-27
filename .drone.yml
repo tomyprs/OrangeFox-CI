@@ -8,6 +8,7 @@ steps:
   - name: setup and build
     image: ghcr.io/sushrut1101/docker:arch
     environment:
+      FOX_SYNC: https://gitlab.com/OrangeFox/sync.git
       DT_LINK:
         from_secret: DT_LINK
       TG_CHAT_ID:
