@@ -1,26 +1,38 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
+  compile:
+   docker:
+      - image: ghcr.io/sushrut1101/docker:arch
+   steps:
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          command: |
+           git config --global user.name "tomyprs"
+           git config --global user.email "tomy.prs25@gmail.com"
+           git config --global color.ui false
+   steps:
+     - run:
+     - name: Setup environment var
+         command: |
+           export FOX_BRANCH="fox_12.1"
+           export DT_LINK=$DT_LINK
+           export DEVICE=$DEVICE
+           export OEM=$OEM
+           export TARGET="bootimage"
+           export OUTPUT="OrangeFox*.zip"
+           export SYNC_PATH="$HOME/work" # Full (absolute) path.
+           export USE_CCACHE=1
+           export CCACHE_SIZE="50G"
+           export CCACHE_DIR="$HOME/work/.ccache"
+           export J_VAL=16
+   steps:
+     - run:
+     - name: CI integration
+       - command: |
+           export TG_TOKEN=$TOKEN
+           export TG_CHAT_ID=$CHAT_ID
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  version: 2.1
+  cooking:
     jobs:
-      - say-hello
+      - compile
