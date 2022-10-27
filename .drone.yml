@@ -18,6 +18,7 @@ steps:
         from_secret: DEVICE
       OEM:
         from_secret: OEM
+
     commands:
       - "export DT_LINK=$DT_LINK"
       - "export TG_CHAT_ID=$TG_CHAT_ID"
@@ -32,19 +33,19 @@ steps:
       - "export DEVICE=$DEVICE"
       - "export OEM=$OEM"
 
-  - name: Checks_script:
+  - name: Checks_script
       commands:
-        - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh | bash"
+       - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh | bash"
 
-  - name: Sync_script:
+  - name: Sync_script
       commands:
         - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh | bash"
 
-  - nanme: Build_script:
+  - nanme: Build_script
       commands:
         - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh | bash"
 
-  - name: Upload_script:
+  - name: Upload_script
       commands
       - "export TIMEOUT=43200"
       - "curl https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/upload.sh | bash"
