@@ -32,8 +32,13 @@ steps:
       - "export J_VAL=16"
       - "export DEVICE=$DEVICE"
       - "export OEM=$OEM"
-      - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh" | bash
-      - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh" | bash
-      - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh" | bash
+      - "cp scripts/* ."
+      - "bash check.sh"
+      - "bash sync.sh"
+      - "bash build.sh"
+      - "bash upload.sh"
+  #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh" | bash
+  #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh" | bash
+  #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh" | bash
       - "export TIMEOUT=43200"
-      - curl "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/upload.sh" | bash
+  #    - curl "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/upload.sh" | bash
