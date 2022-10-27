@@ -8,16 +8,29 @@ steps:
   - name: setup
     image: ghcr.io/sushrut1101/docker:arch
     environment:
-      TWRP_TREE:
-        from_secret: TWRP_TREE
-      CHAT_ID:
+      DT_LINK:
+        from_secret: DT_LINK
+      TG_CHAT_ID:
         from_secret: CHAT_ID
-      TOKEN:
+      TG_TOKEN:
         from_secret: TOKEN
+      DEVICE
+        from_secret: DEVICE
+      OEM:
+        from_secret: OEM
     commands:
-      - "export TWRP_TREE=$TWRP_TREE"
-      - "export CHAT_ID=$CHAT_ID"
-      - "export TOKEN=$TOKEN"
+      - "export DT_LINK=$DT_LINK"
+      - "export TG_CHAT_ID=$TG_CHAT_ID"
+      - "export TG_TOKEN=$TG_TOKEN"
+      - "export TARGET=bootimage"
+      - "export OUTPUT=OrangeFox*.zip"
+      - "export SYNC_PATH=$HOME/work"
+      - "export USE_CCACHE=1"
+      - "export CCACHE_SIZE=50G"
+      - "export CCACHE_DIR=$HOME/work/.ccache"
+      - "export J_VAL=16"
+      - "export DEVICE=$DEVICE"
+      - "export OEM=$OEM"
 
   - name: Checks_script:
       commands:
