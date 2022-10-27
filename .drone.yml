@@ -5,7 +5,7 @@ clone:
   depth: 1
 
 steps:
-  - name: setup
+  - name: setup and build
     image: ghcr.io/sushrut1101/docker:arch
     environment:
       DT_LINK:
@@ -33,10 +33,7 @@ steps:
       - "export DEVICE=$DEVICE"
       - "export OEM=$OEM"
       - "cp scripts/* ."
-      - "bash checks.sh"
-      - "bash sync.sh"
-      - "bash build.sh"
-      - "bash upload.sh"
+      - "bash checks.sh && bash sync.sh && bash build.sh && bash upload.sh"
   #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh" | bash
   #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh" | bash
   #    - curl -sL "https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh" | bash
