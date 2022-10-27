@@ -1,0 +1,37 @@
+kind: pipeline
+name: Ofox_builder
+
+clone:
+  depth: 1
+
+steps:
+  - name: setup
+    image: ghcr.io/sushrut1101/docker:arch
+    environment:
+      TWRP_TREE:
+        from_secret: TWRP_TREE
+      CHAT_ID:
+        from_secret: CHAT_ID
+      TOKEN:
+        from_secret: TOKEN
+    commands:
+      - "export TWRP_TREE=$TWRP_TREE"
+      - "export CHAT_ID=$CHAT_ID"
+      - "export TOKEN=$TOKEN"
+
+  - name: Checks_script:
+      commands:
+        - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh | bash"
+
+  - name: Sync_script:
+      commands:
+        - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh | bash"
+
+  - nanme: Build_script:
+      commands:
+        - "curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh | bash"
+
+  - name: Upload_script:
+      commands
+      - "export TIMEOUT=43200"
+      - "curl https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/upload.sh | bash"
