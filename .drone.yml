@@ -14,7 +14,7 @@ steps:
         from_secret: CHAT_ID
       TG_TOKEN:
         from_secret: TOKEN
-      DEVICE
+      DEVICE:
         from_secret: DEVICE
       OEM:
         from_secret: OEM
