@@ -33,7 +33,7 @@ steps:
       - "export DEVICE=$DEVICE"
       - "export OEM=$OEM"
       - "cp scripts/* ."
-      - "bash check.sh"
+      - "bash checks.sh"
       - "bash sync.sh"
       - "bash build.sh"
       - "bash upload.sh"
