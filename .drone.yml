@@ -6,7 +6,7 @@ clone:
 
 steps:
   - name: setup and build
-    image: ghcr.io/sushrut1101/docker:arch
+    image: archlinux:base-devel
     environment:
       FOX_SYNC: https://gitlab.com/OrangeFox/sync.git
       DT_LINK:
@@ -21,6 +21,8 @@ steps:
         from_secret: OEM
 
     commands:
+      - curl -fsSL "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" | bsdtar -C / -xvf -
+      - pacman -Syu --needed --noconfirm wget base-devel xmlto inetutils bc cpio python-sphinx python-sphinx_rtd_theme graphviz imagemagick git python2 python zip xxd
       - "export DT_LINK=$DT_LINK"
       - "export TG_CHAT_ID=$TG_CHAT_ID"
       - "export TG_TOKEN=$TG_TOKEN"
