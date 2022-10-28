@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: ghcr.io/sushrut1101/docker:arc
+      - image: ghcr.io/sushrut1101/docker:arch
     steps:
       - run:
           command: |
