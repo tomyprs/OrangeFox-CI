@@ -20,7 +20,7 @@ jobs:
             export CCACHE_SIZE="50G"
             export CCACHE_DIR="$HOME/work/.ccache"
             export J_VAL=16
-   steps:
+    steps:
       - run:
         - name: CI integration
         - command: |
