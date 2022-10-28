@@ -12,23 +12,23 @@ jobs:
    steps:
       - run:
           command: |
-           export FOX_BRANCH="fox_12.1"
-           export DT_LINK=$DT_LINK
-           export DEVICE=$DEVICE
-           export OEM=$OEM
-           export TARGET="bootimage"
-           export OUTPUT="OrangeFox*.zip"
-           export SYNC_PATH="$HOME/work" # Full (absolute) path.
-           export USE_CCACHE=1
-           export CCACHE_SIZE="50G"
-           export CCACHE_DIR="$HOME/work/.ccache"
-           export J_VAL=16
+            export FOX_BRANCH="fox_12.1"
+            export DT_LINK=$DT_LINK
+            export DEVICE=$DEVICE
+            export OEM=$OEM
+            export TARGET="bootimage"
+            export OUTPUT="OrangeFox*.zip"
+            export SYNC_PATH="$HOME/work" # Full (absolute) path.
+            export USE_CCACHE=1
+            export CCACHE_SIZE="50G"
+            export CCACHE_DIR="$HOME/work/.ccache"
+            export J_VAL=16
    steps:
-     - run:
-     - name: CI integration
-       - command: |
-           export TG_TOKEN=$TOKEN
-           export TG_CHAT_ID=$CHAT_ID
+      - run:
+        - name: CI integration
+        - command: |
+            export TG_TOKEN=$TOKEN
+            export TG_CHAT_ID=$CHAT_ID
 
 workflows:
   version: 2.1
