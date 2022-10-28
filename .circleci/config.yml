@@ -26,11 +26,11 @@ jobs:
       - image: ghcr.io/sushrut1101/docker:arc
     steps:
       - run:
-          - Checks_script:
+          Checks_script:
               curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh | bash
-          - Sync_script:
+          Sync_script:
               curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh | bash
-           - Build_script:
+          Build_script:
               curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh | bash
 
 workflows:
