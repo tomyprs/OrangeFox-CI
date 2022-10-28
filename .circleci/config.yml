@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
-  docker:
-      - image: ghcr.io/sushrut1101/docker:arc
   compile:
+    docker:
+      - image: ghcr.io/sushrut1101/docker:arc
     steps:
       - run:
           command: |
