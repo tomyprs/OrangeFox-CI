@@ -9,6 +9,7 @@ jobs:
             git config --global user.name "tomyprs"
             git config --global user.email "tomy.prs25@gmail.com"
             git config --global color.ui false
+            export FOX_SYNC: https://gitlab.com/OrangeFox/sync.git
             export FOX_BRANCH="fox_12.1"
             export DT_LINK=$DT_LINK
             export DEVICE=$DEVICE
