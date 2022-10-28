@@ -22,9 +22,9 @@ jobs:
             export J_VAL=16
             export TG_TOKEN=$TOKEN
             export TG_CHAT_ID=$CHAT_ID
-            curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/checks.sh | bash
-            curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/sync.sh | bash
-            curl -sL https://raw.githubusercontent.com/OrangeFoxRecovery/OrangeFox-CI/fox/scripts/build.sh | bash
+            curl -sL https://raw.githubusercontent.com/tomyprs/OrangeFox-CI/fox/scripts/checks.sh | bash
+            curl -sL https://raw.githubusercontent.com/tomyprs/OrangeFox-CI/fox/scripts/sync.sh | bash
+            curl -sL https://raw.githubusercontent.com/tomyprs/OrangeFox-CI/fox/scripts/build.sh | bash
 
 workflows:
   version: 2.1
