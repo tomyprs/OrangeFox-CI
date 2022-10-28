@@ -20,10 +20,6 @@ jobs:
             export CCACHE_SIZE="50G"
             export CCACHE_DIR="$HOME/work/.ccache"
             export J_VAL=16
-    steps:
-      - run:
-        - name: CI integration
-        - command: |
             export TG_TOKEN=$TOKEN
             export TG_CHAT_ID=$CHAT_ID
 
