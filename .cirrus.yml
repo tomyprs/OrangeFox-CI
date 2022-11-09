@@ -1,7 +1,7 @@
 env:
     # OrangeFox Sync Repository
     FOX_SYNC: https://gitlab.com/OrangeFox/sync.git
-    DT_LINK: ENCRYPTED[ebbe1258cbb0907873710bbd9c7e41efed99b5f6b6f787d7f85ffad8f76d3f39c19c5b79a6c978a6a1b379e040b84bab]
+    DT_LINK: https://github.com/tomyprs/recovery_device_redmi_rosemary
 
     # Config
     CONFIG: config.sh
