@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Device
-export FOX_BRANCH="fox_12.1"
+export FOX_BRANCH="fox_11.1"
 #export DT_LINK="ENCRYPTED[]"
 export DEVICE="rosemary"
 export OEM="redmi"
@@ -12,7 +12,7 @@ export OEM="redmi"
 ## "vendorbootimage" - for devices Using vendor boot for the recovery ramdisk (Usually for devices shipped with Android 12 or higher)
 export TARGET="bootimage"
 
-export OUTPUT="OrangeFox*.zip"
+export OUTPUT="OrangeFox-A_12*.zip"
 
 # Additional Dependencies (eg: Kernel Source)
 # Format: "repo dest"
