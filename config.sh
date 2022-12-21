@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Device
-export FOX_BRANCH="fox_11.0"
+export FOX_BRANCH="fox_12.1"
 #export DT_LINK="ENCRYPTED[]"
 export DEVICE="rosemary"
 export OEM="redmi"
